@@ -1,0 +1,4 @@
+Jul 12 08:14:22 server sshd[1204]: Failed password for invalid user admin from 185.220.101.5 port 51422 ssh2
+Jul 12 08:14:25 server sshd[1205]: Failed password for invalid user admin from 185.220.101.5 port 51423 ssh2
+Jul 12 08:14:29 server sshd[1206]: Failed password for root from 185.220.101.5 port 51424 ssh2
+Jul 12 08:15:01 server sshd[1207]: Accepted password for john from 192.168.1.10 port 51425 ssh2
