@@ -58,6 +58,18 @@ python run.py --file sample_logs/auth.log --threshold 3
   brute-force (default: 5)
 - `--output` — path to write the CSV report (default: `report.csv`)
 
+## Web UI
+
+Launch the visual dashboard with:
+
+```powershell
+python web_app.py
+```
+
+Then open `http://127.0.0.1:5000`. The dashboard starts with the bundled sample
+log and accepts uploaded `.log` or `.txt` files. Set `ABUSEIPDB_KEY` in `.env`
+to enable live enrichment; without it, local detection still works.
+
 ## What it does
 
 1. **Parses** the log file with regex, extracting IP, timestamp, username, and status
