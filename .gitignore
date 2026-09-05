@@ -1,6 +1,5 @@
-.env
 venv/
+venv_broken/
 __pycache__/
 *.pyc
-cache.json
-report.csv
+.env
