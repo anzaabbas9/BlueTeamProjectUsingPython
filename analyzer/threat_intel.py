@@ -1,9 +1,9 @@
-"""Queries AbuseIPDB to enrich flagged IPs with threat intelligence."""
-
+import time
 import requests
 from analyzer.cache import load_cache, save_cache
 
 ABUSEIPDB_URL = 'https://api.abuseipdb.com/api/v2/check'
+REQUEST_DELAY_SECONDS = 1
 
 
 def check_ip(ip, api_key):
@@ -31,6 +31,8 @@ def check_ip(ip, api_key):
         }
         cache[ip] = result
         save_cache(cache)
+        time.sleep(REQUEST_DELAY_SECONDS)
         return result
     except requests.exceptions.RequestException as e:
+        time.sleep(REQUEST_DELAY_SECONDS)
         return {'ip': ip, 'error': str(e)}

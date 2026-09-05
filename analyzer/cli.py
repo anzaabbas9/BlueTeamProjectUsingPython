@@ -26,6 +26,10 @@ def build_parser():
 def main():
     args = build_parser().parse_args()
 
+    if not os.path.isfile(args.file):
+        console.print(f"[red]Log file not found: {args.file}[/red]")
+        return 1
+
     print_banner()
 
     entries = parse_log(args.file)
@@ -43,4 +47,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main())
